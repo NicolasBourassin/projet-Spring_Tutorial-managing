@@ -29,14 +29,14 @@ public class ProjetTutoSpringApplication implements CommandLineRunner {
         Tutorial myTuto2 = new Tutorial();
         myTuto2.setTitle("Spring 2");
         myTuto2.setDescription("description 2");
-        myTuto2.setPublished(true);
+        myTuto2.setPublished(false);
         tutorialRepository.save(myTuto2);
 
         List<Tutorial> selection1 = tutorialRepository.findTutorialsByPublished(true);
         System.out.println("selection 1 : "+
                 selection1.toString());
 
-        List<Tutorial> selection2 = tutorialRepository.findTutorialsByTitle("Spring 2");
+        List<Tutorial> selection2 = tutorialRepository.findTutorialsByTitleContaining("Spring 2");
         System.out.println("selection 2 : "+
                 selection2.toString());
 

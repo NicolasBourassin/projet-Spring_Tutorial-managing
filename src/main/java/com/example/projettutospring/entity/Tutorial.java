@@ -13,7 +13,7 @@ public class Tutorial {
     private Long id;
     private String title;
     private String description;
-    private Boolean isPublished;
+    private Boolean published;
 
     public Tutorial() {
     }
@@ -21,7 +21,7 @@ public class Tutorial {
     public Tutorial(String title, String description, Boolean isPublished) {
         this.title = title;
         this.description = description;
-        this.isPublished = isPublished;
+        this.published = isPublished;
     }
 
     public Long getId() {
@@ -49,10 +49,20 @@ public class Tutorial {
     }
 
     public Boolean getPublished() {
-        return isPublished;
+        return published;
     }
 
     public void setPublished(Boolean published) {
-        isPublished = published;
+        this.published = published;
+    }
+
+    @Override
+    public String toString() {
+        return "Tutorial{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", published=" + published +
+                '}';
     }
 }
