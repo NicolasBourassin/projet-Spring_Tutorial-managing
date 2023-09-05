@@ -18,10 +18,10 @@ public class Tutorial {
     public Tutorial() {
     }
 
-    public Tutorial(String title, String description, Boolean isPublished) {
+    public Tutorial(String title, String description, Boolean published) {
         this.title = title;
         this.description = description;
-        this.published = isPublished;
+        this.published = published;
     }
 
     public Long getId() {

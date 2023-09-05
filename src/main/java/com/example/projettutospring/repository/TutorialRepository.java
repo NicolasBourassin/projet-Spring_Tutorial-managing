@@ -9,5 +9,5 @@ import java.util.List;
 public interface TutorialRepository extends JpaRepository<Tutorial, Long> {
     List<Tutorial> findTutorialsByPublished(Boolean isPublished);
 
-    List<Tutorial> findTutorialsByTitleContaining(String title);
+    List<Tutorial> findTutorialsByTitleContains(String title);
 }

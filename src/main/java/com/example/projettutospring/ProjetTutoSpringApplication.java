@@ -36,7 +36,7 @@ public class ProjetTutoSpringApplication implements CommandLineRunner {
         System.out.println("selection 1 : "+
                 selection1.toString());
 
-        List<Tutorial> selection2 = tutorialRepository.findTutorialsByTitleContaining("Spring 2");
+        List<Tutorial> selection2 = tutorialRepository.findTutorialsByTitleContains("Spring 2");
         System.out.println("selection 2 : "+
                 selection2.toString());
 
