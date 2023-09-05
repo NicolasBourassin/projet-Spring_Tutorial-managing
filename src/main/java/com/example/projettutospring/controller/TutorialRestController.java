@@ -5,6 +5,7 @@ import com.example.projettutospring.repository.TutorialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,12 +18,17 @@ public class TutorialRestController {
 
     @GetMapping(value = "tutorials")
     public List<Tutorial> getAll(){
-        return tutorialRepository.findAll();
+        List<Tutorial> results = tutorialRepository.findAll();
+        if(results.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        }
+        return results;
     }
 
     @ResponseBody
     @GetMapping(value = "tutorials/title")
     public List<Tutorial> getByTitle(@RequestParam String title){
+
         return tutorialRepository.findTutorialsByTitleContains(title);
     }
 
