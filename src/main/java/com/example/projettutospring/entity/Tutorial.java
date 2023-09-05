@@ -24,13 +24,9 @@ public class Tutorial {
         this.published = published;
     }
 
-    public Long getId() {
-        return id;
+    public Tutorial(Long id, String title, String description, Boolean published) {
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -56,6 +52,10 @@ public class Tutorial {
         this.published = published;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Tutorial{" +
@@ -65,4 +65,5 @@ public class Tutorial {
                 ", published=" + published +
                 '}';
     }
+
 }
