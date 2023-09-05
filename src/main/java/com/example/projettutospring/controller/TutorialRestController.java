@@ -3,6 +3,7 @@ package com.example.projettutospring.controller;
 import com.example.projettutospring.entity.Tutorial;
 import com.example.projettutospring.repository.TutorialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class TutorialRestController {
     }
 
     @PostMapping(value = "tutorials")
+    @ResponseStatus(HttpStatus.CREATED)
     public void add(@RequestBody Tutorial tutorial) {
         tutorialRepository.save(new Tutorial(tutorial.getTitle(), tutorial.getDescription(), tutorial.getPublished()));
     }
