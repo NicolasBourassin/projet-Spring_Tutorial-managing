@@ -28,7 +28,7 @@ public class TutorialRestController {
     }
 
     @ResponseBody
-    @GetMapping(value = "tutorials/title")
+    @GetMapping(value = "tutorials?")
     public List<Tutorial> getByTitle(@RequestParam String title){
         List<Tutorial> results =tutorialRepository.findTutorialsByTitleContains(title);
         if(results.isEmpty()){
