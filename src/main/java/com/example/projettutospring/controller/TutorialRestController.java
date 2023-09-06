@@ -12,6 +12,7 @@ import org.springframework.web.service.annotation.DeleteExchange;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/")
 public class TutorialRestController {
